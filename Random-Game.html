@@ -14,7 +14,6 @@
   #root{
     width: 100vw;
     height: 100vh;
-    /* background-color: azure; */
     display: flex;
     position: relative;
     align-items: center;
@@ -68,11 +67,12 @@
   <script>
     const play = document.getElementById("play");
     const box = root.children[0];
+    const score = root.children[1].children[1];
     console.dir(root);
 
     play.addEventListener('click', function(){
      interval = setInterval(function(){
-    const randomBox = document.createElement("div");
+     const randomBox = document.createElement("div");
 
     root.children[0].appendChild(randomBox);
     randomBox.style.width = "20px";
@@ -80,15 +80,15 @@
     randomBox.style.backgroundColor = "black";
     randomBox.style.position ="absolute"
 
-    
-
-    }, 1000
-     )
-    
- 
-
-
-    })
+      let x = Math.floor(Math.random() * 700)
+      let y = Math.floor(Math.random() * 700)
+      let xString = x.toString()
+      let ySting = y.toString()
+      randomBox.style.left = xString+"px"
+      randomBox.style.top = ySting+"px"
+      
+    }, 1000)
+  });
   </script>
 </body>
 </html>
