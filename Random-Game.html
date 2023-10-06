@@ -59,7 +59,7 @@
     <div id = "box"></div>
     <div>
       <div id = "time">제한시간</div>
-      <div id = "score">점수</div>
+      <div id = "score"></div>
       <div id = "play">play!</div>
     </div>
   </div>
@@ -67,8 +67,15 @@
   <script>
     const play = document.getElementById("play");
     const box = root.children[0];
-    const score = root.children[1].children[1];
+    const score = document.getElementById("score");
     console.dir(root);
+    let val = 0;
+
+    function counter(){
+     val++;
+     console.log(val);
+     score.innerText = "SCORE:" + val + "점";
+    }
 
     play.addEventListener('click', function(){
      interval = setInterval(function(){
@@ -89,9 +96,11 @@
       
       randomBox.addEventListener('click', function(){
       randomBox.remove()
+      counter();
       })
     }, 1000)
   });
+
   </script>
 </body>
 </html>
