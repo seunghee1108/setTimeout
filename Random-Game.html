@@ -17,8 +17,41 @@
     background-color: azure;
     display: flex;
     position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  #box{
+    width: 800px;
+    height: 800px;
+    background-color:#D9D9D9;
+    position: relative;
+    left: 200px;
+  }
+  #time{
+    width: 300px;
+    height: 70px;
+    background-color:#D9D9D9;
+  }
+  #score{
+    width: 300px;
+    height: 70px;
+    background-color:#D9D9D9;
+  }
+  #play{
+    width: 300px;
+    height: 300px;
+    background-color:#D9D9D9;
   }
 
+  div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5px;   
+    position: relative;
+    left: -40px;
+    }
+  
 </style>
 <body>
   <div id = "root">
@@ -29,8 +62,16 @@
       <div id = "play">play!</div>
     </div>
   </div>
-  <script>
 
+  <script>
+    const play = document.getElementById("play");
+    play.addEventListener('click', function(){
+      interval = setInterval(
+        randomBox = document.createElement("div")
+      )
+      
+
+    })
   </script>
 </body>
 </html>
