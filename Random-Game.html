@@ -65,12 +65,14 @@
   </div>
 
   <script>
+    // 전역 파트
     const play = document.getElementById("play");
     const box = root.children[0];
     const score = document.getElementById("score");
     console.dir(root);
     let val = 0;
 
+    // 함수 정리 파티
     function counter(){
      val++;
      console.log(val);
@@ -78,29 +80,34 @@
     }
 
     play.addEventListener('click', function(){
-     interval = setInterval(function(){
+     // 인터벌 시작
+     let interval = setInterval(function(){
+     // 태그 생성 로직
      const randomBox = document.createElement("div");
+     root.children[0].appendChild(randomBox);
 
-    root.children[0].appendChild(randomBox);
-    randomBox.style.width = "20px";
-    randomBox.style.height = "20px";
-    randomBox.style.backgroundColor = "black";
-    randomBox.style.position ="absolute"
+    // 동적 스타일링
+     randomBox.style.width = "20px";
+     randomBox.style.height = "20px";
+     randomBox.style.backgroundColor = "black";
+     randomBox.style.position ="absolute"
 
-      let x = Math.floor(Math.random() * 700)
-      let y = Math.floor(Math.random() * 700)
-      let xString = x.toString()
-      let ySting = y.toString()
-      randomBox.style.left = xString+"px"
-      randomBox.style.top = ySting+"px"
-      
-      randomBox.addEventListener('click', function(){
-      randomBox.remove()
-      counter();
-      })
+    // 랜덤 생성 로직
+     let x = Math.floor(Math.random() * 700)
+     let y = Math.floor(Math.random() * 700)
+     let xString = x.toString()
+     let ySting = y.toString()
+     randomBox.style.left = xString+"px"
+     randomBox.style.top = ySting+"px"
+    // 클릭 이벤트 시작
+     randomBox.addEventListener('click', function(){
+     randomBox.remove()
+     counter();
+     })
+     // 인터벌 종료
     }, 1000)
+    // play 버튼 이벤트 종료
   });
-
   </script>
 </body>
 </html>
